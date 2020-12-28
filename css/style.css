@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-play-state: running, running;
+}
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
+@-webkit-keyframes gift-fall {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+    -webkit-transform: rotate(-120deg);
+    transform: rotate(-120deg);
+  }
+}
+@keyframes gift-fall {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+    -webkit-transform: rotate(-120deg);
+    transform: rotate(-120deg);
+  }
+}
+@-webkit-keyframes gift-appear {
+  0% {
+    top: -100%;
+  }
+  70% {
+    top: 0;
+  }
+  80% {
+    top: -2%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes gift-appear {
+  0% {
+    top: -100%;
+  }
+  70% {
+    top: 0;
+  }
+  80% {
+    top: -2%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-webkit-keyframes open-cap {
+  from {
+    top: 0;
+    right: 0;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    top: -100px;
+    right: 800px;
+  }
+}
+@keyframes open-cap {
+  from {
+    top: 0;
+    right: 0;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    top: -100px;
+    right: 800px;
+  }
+}
+.fall {
+  -webkit-animation: gift-fall 0.7s forwards ease-out;
+  animation: gift-fall 0.7s forwards ease-out;
+}
+.appear {
+  -webkit-animation: gift-appear 0.7s forwards ease-in;
+  animation: gift-appear 0.7s forwards ease-in;
+}
+.open {
+  -webkit-animation: open-cap 0.7s forwards ease-out;
+  animation: open-cap 0.7s forwards ease-out;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+.gift {
+  position: relative;
+}
+.gift-box {
+  position: relative;
+  z-index: -1;
+  height: 12rem;
+  width: 12rem;
+  background-color: #ff1818;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+}
+.gift-box .white-stripe {
+  position: relative;
+  height: 2rem;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}
+.gift-box .white-stripe.white-stripe-horizontal {
+  top: 5rem;
+}
+.gift-box .white-stripe.white-stripe-vertical {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 3rem;
+}
+.gift-box .white-stripe .red-stripe {
+  position: absolute;
+  background-color: #ff1818;
+  width: 100%;
+  height: 0.4rem;
+}
+.gift-box .white-stripe .red-stripe.red-stripe-horizontal-1,
+.gift-box .white-stripe .red-stripe.red-stripe-vertical-1 {
+  top: 0.4rem;
+}
+.gift-box .white-stripe .red-stripe.red-stripe-horizontal-2,
+.gift-box .white-stripe .red-stripe.red-stripe-vertical-2 {
+  bottom: 0.4rem;
+}
+.cap {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.cap .top {
+  position: absolute;
+  z-index: -1;
+}
+.cap .top .butterfly {
+  position: absolute;
+  width: 3rem;
+  height: 4rem;
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px 2px #000;
+  box-shadow: 0 0 10px 2px #000;
+}
+.cap .top .butterfly.butterfly-left {
+  top: -3.5rem;
+  left: 3rem;
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+.cap .top .butterfly.butterfly-right {
+  top: -2.5rem;
+  left: 5.5rem;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.cap .bottom {
+  position: absolute;
+  top: -1rem;
+  left: -0.5rem;
+  width: 13rem;
+  height: 3rem;
+  background-color: #ff1818;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+}
+.cap .bottom .cap-white-stripe {
+  position: absolute;
+  background-color: #fff;
+  width: 2rem;
+  height: 3rem;
+  top: 0rem;
+  left: 5.5rem;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}
+.cap .bottom .cap-white-stripe .cap-red-stripe {
+  position: absolute;
+  background-color: #ff1818;
+  width: 0.4rem;
+  height: 3rem;
+}
+.cap .bottom .cap-white-stripe .cap-red-stripe.cap-red-stripe-left {
+  left: 0.4rem;
+}
+.cap .bottom .cap-white-stripe .cap-red-stripe.cap-red-stripe-right {
+  right: 0.4rem;
+}
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.btn {
+  font-family: inherit;
+  background-color: #ddd;
+  padding: 1rem 3rem;
+  margin: 1rem;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.btn:hover {
+  background-color: #c4c4c4;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Press Start 2P', sans-serif;
+  line-height: 1.2rem;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f44),
+    to(#69a5ff)
+  );
+  background: linear-gradient(#f44, #69a5ff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+section {
+  padding: 2rem;
+  margin: 2rem 4rem;
+}
+.red {
+  background-color: #ff1818 !important;
+}
+.green {
+  background-color: green !important;
+}
+.blue {
+  background-color: #0143d3 !important;
+}

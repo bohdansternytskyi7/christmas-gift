@@ -1,0 +1,152 @@
+@keyframes gift-fall {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+    transform: rotate(-120deg);
+  }
+}
+@keyframes gift-appear {
+  0% {
+    top: -100%;
+  }
+  70% {
+    top: 0;
+  }
+  80% {
+    top: -2%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes open-cap {
+  from {
+    top: 0;
+    right: 0;
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+    top: -100px;
+    right: 800px;
+  }
+}
+.fall {
+  animation: gift-fall 0.7s forwards ease-out;
+}
+.appear {
+  animation: gift-appear 0.7s forwards ease-in;
+}
+.open {
+  animation: open-cap 0.7s forwards ease-out;
+  transform-origin: center;
+}
+
+.gift {
+  position: relative;
+}
+
+.gift-box {
+  position: relative;
+  z-index: -1;
+  height: 12rem;
+  width: 12rem;
+  background-color: $main-color;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+  .white-stripe {
+    position: relative;
+    height: 2rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    &.white-stripe-horizontal {
+      top: 5rem;
+    }
+    &.white-stripe-vertical {
+      transform: rotate(90deg);
+      top: 3rem;
+    }
+
+    .red-stripe {
+      position: absolute;
+      background-color: $main-color;
+      width: 100%;
+      height: 0.4rem;
+      &.red-stripe-horizontal-1,
+      &.red-stripe-vertical-1 {
+        top: 0.4rem;
+      }
+      &.red-stripe-horizontal-2,
+      &.red-stripe-vertical-2 {
+        bottom: 0.4rem;
+      }
+    }
+  }
+}
+
+.cap {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  .top {
+    position: absolute;
+    z-index: -1;
+
+    .butterfly {
+      position: absolute;
+      width: 3rem;
+      height: 4rem;
+      border-radius: 4px;
+      background-color: #fff;
+      box-shadow: 0 0 10px 2px #000;
+
+      &.butterfly-left {
+        top: -3.5rem;
+        left: 3rem;
+        transform: rotate(-30deg);
+      }
+
+      &.butterfly-right {
+        top: -2.5rem;
+        left: 5.5rem;
+        transform: rotate(30deg);
+      }
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+    width: 13rem;
+    height: 3rem;
+    background-color: $main-color;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+    .cap-white-stripe {
+      position: absolute;
+      background-color: #fff;
+      width: 2rem;
+      height: 3rem;
+      top: 0rem;
+      left: 5.5rem;
+      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+      .cap-red-stripe {
+        position: absolute;
+        background-color: $main-color;
+        width: 0.4rem;
+        height: 3rem;
+        &.cap-red-stripe-left {
+          left: 0.4rem;
+        }
+        &.cap-red-stripe-right {
+          right: 0.4rem;
+        }
+      }
+    }
+  }
+}
