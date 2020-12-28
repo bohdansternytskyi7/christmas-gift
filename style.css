@@ -1,40 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 :root {
   --main-color: rgb(255, 24, 24);
+}
+
+@-webkit-keyframes gift-fall {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+}
+
+@keyframes gift-fall {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+}
+
+@-webkit-keyframes gift-appear {
+  0% {
+    top: -100%;
+  }
+  70% {
+    top: 0;
+  }
+  80% {
+    top: -2%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes gift-appear {
+  0% {
+    top: -100%;
+  }
+  70% {
+    top: 0;
+  }
+  80% {
+    top: -2%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.fall {
+  -webkit-animation: gift-fall 1s forwards;
+          animation: gift-fall 1s forwards;
+}
+
+.appear {
+  -webkit-animation: gift-appear 1s forwards ease-in;
+          animation: gift-appear 1s forwards ease-in;
 }
 
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
+  position: relative;
   height: 100vh;
+  overflow: hidden;
   font-family: 'Press Start 2P', sans-serif;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#ff4444),
-    to(#69a5ff)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff4444), to(#69a5ff));
   background: linear-gradient(#ff4444, #69a5ff);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 section {
   padding: 2rem;
   margin: 2rem 4rem;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.btn {
+  font-family: inherit;
+  background-color: #dddddd;
+  padding: 1rem 3rem;
+  margin: 1rem;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #bbbbbb;
+}
+
+.gift {
+  position: relative;
 }
 
 .gift-box {
@@ -45,7 +136,7 @@ section {
   background-color: var(--main-color);
   border-radius: 3px;
   -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
 }
 
 .gift-box .white-stripe {
@@ -54,7 +145,7 @@ section {
   width: 100%;
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
 }
 
 .gift-box .white-stripe.white-stripe-horizontal {
@@ -63,7 +154,7 @@ section {
 
 .gift-box .white-stripe.white-stripe-vertical {
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+          transform: rotate(90deg);
   top: 3rem;
 }
 
@@ -74,13 +165,11 @@ section {
   height: 0.4rem;
 }
 
-.gift-box .white-stripe .red-stripe.red-stripe-horizontal-1,
-.gift-box .white-stripe .red-stripe.red-stripe-vertical-1 {
+.gift-box .white-stripe .red-stripe.red-stripe-horizontal-1, .gift-box .white-stripe .red-stripe.red-stripe-vertical-1 {
   top: 0.4rem;
 }
 
-.gift-box .white-stripe .red-stripe.red-stripe-horizontal-2,
-.gift-box .white-stripe .red-stripe.red-stripe-vertical-2 {
+.gift-box .white-stripe .red-stripe.red-stripe-horizontal-2, .gift-box .white-stripe .red-stripe.red-stripe-vertical-2 {
   bottom: 0.4rem;
 }
 
@@ -94,15 +183,15 @@ section {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in;
+  transition: 1s ease-in;
 }
 
 .cap.open {
   -webkit-transform: rotate(-180deg);
-  transform: rotate(-180deg);
+          transform: rotate(-180deg);
   -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
+          transform-origin: 0 0;
 }
 
 .cap .top {
@@ -117,21 +206,21 @@ section {
   border-radius: 4px;
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px 2px #000;
-  box-shadow: 0 0 10px 2px #000;
+          box-shadow: 0 0 10px 2px #000;
 }
 
 .cap .top .butterfly.butterfly-left {
   top: -3.5rem;
   left: 3rem;
   -webkit-transform: rotate(-30deg);
-  transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .cap .top .butterfly.butterfly-right {
   top: -2.5rem;
   left: 5.5rem;
   -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 .cap .bottom {
@@ -143,7 +232,7 @@ section {
   background-color: var(--main-color);
   border-radius: 3px;
   -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
 }
 
 .cap .bottom .cap-white-stripe {
@@ -154,7 +243,7 @@ section {
   top: 0rem;
   left: 5.5rem;
   -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cap .bottom .cap-white-stripe .cap-red-stripe {
@@ -170,24 +259,6 @@ section {
 
 .cap .bottom .cap-white-stripe .cap-red-stripe.cap-red-stripe-right {
   right: 0.4rem;
-}
-
-.btn {
-  font-family: inherit;
-  background-color: #dddddd;
-  padding: 1rem 3rem;
-  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-
-.btn:hover {
-  background-color: #bbbbbb;
 }
 
 /* Snow animation imported form the internet */
@@ -234,15 +305,15 @@ section {
 @keyframes snowflakes-shake {
   0% {
     -webkit-transform: translateX(0px);
-    transform: translateX(0px);
+            transform: translateX(0px);
   }
   50% {
     -webkit-transform: translateX(80px);
-    transform: translateX(80px);
+            transform: translateX(80px);
   }
   100% {
     -webkit-transform: translateX(0px);
-    transform: translateX(0px);
+            transform: translateX(0px);
   }
 }
 
