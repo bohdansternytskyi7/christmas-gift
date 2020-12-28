@@ -11,9 +11,11 @@ const openGift = () => {
 
 const nextGift = () => {
   nextBtnEl.disabled = true;
+  openBtnEl.disabled = true;
   giftEl.classList.add('fall');
-  capEl.classList.remove('open');
+
   setTimeout(() => {
+    capEl.classList.remove('open');
     giftEl.classList.remove('fall');
     giftEl.classList.add('appear');
     setTimeout(() => {

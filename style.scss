@@ -9,7 +9,7 @@
   }
   to {
     top: 100%;
-    transform: rotate(120deg);
+    transform: rotate(-120deg);
   }
 }
 @keyframes gift-appear {
@@ -26,11 +26,27 @@
     top: 0;
   }
 }
+@keyframes open-cap {
+  from {
+    top: 0;
+    right: 0;
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+    top: -100px;
+    right: 800px;
+  }
+}
 .fall {
   animation: gift-fall 1s forwards ease-out;
 }
 .appear {
   animation: gift-appear 1s forwards ease-in;
+}
+.open {
+  animation: open-cap 1s forwards ease-out;
+  transform-origin: center;
 }
 
 * {
@@ -122,15 +138,8 @@ section {
 
 .cap {
   position: relative;
-  transition: all 1s ease-in;
   width: fit-content;
   height: fit-content;
-  transition: 0.7s ease-in-out;
-
-  &.open {
-    transform: rotate(-180deg);
-    transform-origin: 0 0;
-  }
 
   .top {
     position: absolute;

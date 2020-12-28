@@ -9,8 +9,8 @@
   }
   to {
     top: 100%;
-    -webkit-transform: rotate(120deg);
-            transform: rotate(120deg);
+    -webkit-transform: rotate(-120deg);
+            transform: rotate(-120deg);
   }
 }
 
@@ -20,8 +20,8 @@
   }
   to {
     top: 100%;
-    -webkit-transform: rotate(120deg);
-            transform: rotate(120deg);
+    -webkit-transform: rotate(-120deg);
+            transform: rotate(-120deg);
   }
 }
 
@@ -55,6 +55,36 @@
   }
 }
 
+@-webkit-keyframes open-cap {
+  from {
+    top: 0;
+    right: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    top: -100px;
+    right: 800px;
+  }
+}
+
+@keyframes open-cap {
+  from {
+    top: 0;
+    right: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    top: -100px;
+    right: 800px;
+  }
+}
+
 .fall {
   -webkit-animation: gift-fall 1s forwards ease-out;
           animation: gift-fall 1s forwards ease-out;
@@ -63,6 +93,13 @@
 .appear {
   -webkit-animation: gift-appear 1s forwards ease-in;
           animation: gift-appear 1s forwards ease-in;
+}
+
+.open {
+  -webkit-animation: open-cap 1s forwards ease-out;
+          animation: open-cap 1s forwards ease-out;
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 * {
@@ -175,23 +212,12 @@ section {
 
 .cap {
   position: relative;
-  -webkit-transition: all 1s ease-in;
-  transition: all 1s ease-in;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out;
-}
-
-.cap.open {
-  -webkit-transform: rotate(-180deg);
-          transform: rotate(-180deg);
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
 }
 
 .cap .top {
