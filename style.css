@@ -56,8 +56,8 @@
 }
 
 .fall {
-  -webkit-animation: gift-fall 1s forwards;
-          animation: gift-fall 1s forwards;
+  -webkit-animation: gift-fall 1s forwards ease-out;
+          animation: gift-fall 1s forwards ease-out;
 }
 
 .appear {
@@ -183,8 +183,8 @@ section {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  -webkit-transition: 1s ease-in;
-  transition: 1s ease-in;
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
 }
 
 .cap.open {

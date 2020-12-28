@@ -27,7 +27,7 @@
   }
 }
 .fall {
-  animation: gift-fall 1s forwards;
+  animation: gift-fall 1s forwards ease-out;
 }
 .appear {
   animation: gift-appear 1s forwards ease-in;
@@ -125,7 +125,7 @@ section {
   transition: all 1s ease-in;
   width: fit-content;
   height: fit-content;
-  transition: 1s ease-in;
+  transition: 0.7s ease-in-out;
 
   &.open {
     transform: rotate(-180deg);
